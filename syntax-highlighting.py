@@ -35,7 +35,7 @@ sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 data = sys.stdin.read()
 filename = sys.argv[1]
-formatter = HtmlFormatter(cssclass="code")
+formatter = HtmlFormatter(cssclass="code hscroll-pane")
 
 try:
 	lexer = guess_lexer_for_filename(filename, data)

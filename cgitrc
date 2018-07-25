@@ -1,4 +1,6 @@
 include=/home/ymf/repo/cgit/theme.cgitrc
+cache-size=1000
+enable-blame=1
 robots=noindex, nofollow
 
 root-title=Ted's Git Mirror

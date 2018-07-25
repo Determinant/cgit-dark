@@ -7,6 +7,30 @@ body {
 	background: #282828;
 }
 
+.code {
+}
+
+ul, ol {
+    list-style-position: inside;
+    padding-left: 16px; }
+    ul.unstyled, ol.unstyled {
+        margin-top: 30px;
+        margin-left: 0;
+        list-style: none; }
+        ul.unstyled > li, ol.unstyled > li {
+            margin-top: 5px; }
+
+ul > li {
+    list-style: none; }
+    ul > li:before {
+        content: "\e080";
+        font-family: 'Glyphicons Halflings';
+        font-size: 9px;
+        float: left;
+        margin-left: -17px;
+        padding-top: 0.5em; }
+
+
 div#cgit select, div#cgit input {
     margin: 0;
     padding: 0 0.3em;
@@ -27,7 +51,7 @@ div#cgit select:focus, div#cgit input:focus {
 div#cgit {
 	padding: 0em;
 	margin: 0em;
-	font-family: sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-size: 10pt;
 	color: #ebdbb2;
 	background: #282828;
@@ -309,6 +333,7 @@ div#cgit td.ls-mode {
 }
 
 div#cgit table.blob {
+    table-layout: fixed;
 	margin-top: 0.5em;
 	border-top: solid 1px #fbf1c7;
 }
@@ -834,4 +859,45 @@ div#cgit table.ssdiff td.space {
 
 div#cgit table.ssdiff td.space div {
 	min-height: 3em;
+}
+
+div#cgit table.blame td.hashes,
+div#cgit table.blame td.lines,
+div#cgit table.blame td.linenumbers {
+	padding: 0;
+}
+
+div#cgit table.blame td.hashes div.alt,
+div#cgit table.blame td.lines div.alt {
+	padding: 0 0.5em 0 0.5em;
+}
+
+div#cgit table.blame td.linenumbers div.alt {
+	padding: 0 0.5em 0 0;
+}
+
+div#cgit table.blame div.alt:nth-child(even) {
+	background: #2a2a2a;
+}
+
+div#cgit table.blame div.alt:nth-child(odd) {
+	background: #323232;
+}
+
+div#cgit table.blame td.lines > div {
+	position: relative;
+}
+
+div#cgit table.blame td.lines > div > pre {
+	padding: 0 0 0 0.5em;
+	position: absolute;
+	top: 0;
+}
+
+div#cgit table.blame .code {
+    background: none;
+}
+
+div#cgit table.blame .code span {
+    background: none;
 }

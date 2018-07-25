@@ -1,0 +1,57 @@
+include=/home/ymf/repo/cgit/theme.cgitrc
+robots=noindex, nofollow
+
+root-title=Ted's Git Mirror
+root-desc=Please contact me before using the code without license information.
+
+repo.url=h99
+repo.desc=My solutions to ninety-nine Haskell problems.
+repo.path=/home/ymf/repo/h99.git
+
+repo.url=nixie-clock
+repo.desc=A multi-functional nixie tube clock implemented in Rust.
+repo.path=/home/ymf/repo/nixie-clock.git
+
+repo.url=ethy.py
+repo.desc=Decryption/verification/generation of Ethereum wallets in one script.
+repo.path=/home/ymf/repo/ethy.py.git
+
+repo.url=salticidae
+repo.desc=Minimal C++ asynchronous network library.
+repo.path=/home/ymf/repo/salticidae.git
+
+repo.url=cppromise
+repo.desc=Lightweight C++14/17 implementation of Promise modeled Javascript Promise/A+.
+repo.path=/home/ymf/repo/cppromise.git
+
+repo.url=runes
+repo.desc=No-std NES emulator library and minimal emulator written purely in Rust.
+repo.path=/home/ymf/repo/runes.git
+
+repo.url=nerv
+repo.desc=A Lua-based toolkit for high-performance deep learning
+repo.path=/home/ymf/repo/nerv.git
+
+repo.url=nerv-speech
+repo.desc=Important extensions for NERV (HTK/Kaldi IO support, sequence training, etc.)
+repo.path=/home/ymf/repo/nerv-speech.git
+
+repo.url=mpd_trigger
+repo.desc=Execute whatever you want when MPD (Music Player Daemon) changes its state
+repo.path=/home/ymf/repo/mpd_trigger.git
+
+repo.url=cibic
+repo.desc=C Implemented Bare and Ingenuous Compiler
+repo.path=/home/ymf/repo/cibic.git
+
+repo.url=lab_monitor
+repo.desc=An easy-to-deploy and simple web interface to monitor whatever you want.
+repo.path=/home/ymf/repo/lab_monitor.git
+
+repo.url=piztor
+repo.desc=A simple location sharing system
+repo.path=/home/ymf/repo/piztor.git
+
+repo.url=sonsi
+repo.desc=Stupid and Obvious Non-recursive Scheme Interpreter
+repo.path=/home/ymf/repo/sonsi.git

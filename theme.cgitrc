@@ -1,0 +1,10 @@
+css=
+logo=
+virtual-root=/git
+header=/home/ymf/repo/cgit/header.html
+footer=/home/ymf/repo/cgit/footer.html
+source-filter=/home/ymf/repo/cgit/syntax-highlighting.py
+about-filter=/home/ymf/repo/cgit/about-formatting.sh
+readme=:README.md
+readme=:README.rst
+enable-commit-graph=1

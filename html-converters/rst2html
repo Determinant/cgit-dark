@@ -1,0 +1,2 @@
+#!/bin/bash
+exec rst2html5 --template <(echo -e "%(body_pre_docinfo)s\n%(docinfo)s\n%(body)s") --syntax-highlight=short

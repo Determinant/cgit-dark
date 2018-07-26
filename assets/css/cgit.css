@@ -7,7 +7,22 @@ body {
 	background: #282828;
 }
 
-.code {
+.code code {
+	font-family: 'Fantasque Sans Mono', 'Inconsolata', monospace;
+}
+
+pre.literal-block {
+    background-color: #3c3836;
+    padding: 1em;
+    overflow: auto;
+    line-height: 1.3em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+pre.literal-block.code span {
+    background: none;
 }
 
 ul, ol {
@@ -900,4 +915,8 @@ div#cgit table.blame .code {
 
 div#cgit table.blame .code span {
     background: none;
+}
+
+div#cgit span.docutils.literal {
+	font-family: 'Fantasque Sans Mono', 'Inconsolata', monospace;
 }

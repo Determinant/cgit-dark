@@ -4,12 +4,20 @@ if [[ ! "$#" -eq 1 ]]; then
     echo "please specify the virtual root, e.g. /git/"
     exit 1
 fi
-VIRT_ROOT=${1%/}
+
+function remove_slashes {
+    x="$1"
+    case "$x" in *[!/]*/) x="${x%"${x##*[!/]}"}";; esac
+    echo "$x"
+}
+
+VIRT_ROOT=$(remove_slashes "${1%/}")
+echo $VIRT_ROOT
 cat > theme.cgitrc << EOF
 css=
 logo=
 virtual-root=$VIRT_ROOT
-header=${BASE_DIR}/header.html
+head-include=${BASE_DIR}/head.html
 footer=${BASE_DIR}/footer.html
 source-filter=${BASE_DIR}/syntax-highlighting.py
 about-filter=${BASE_DIR}/about-formatting.sh
@@ -26,3 +34,5 @@ location $VIRT_ROOT/assets {
     disable_symlinks off;
 }
 EOF
+
+sed "s=%VIRT_ROOT%=$VIRT_ROOT=g" head.html.template > head.html

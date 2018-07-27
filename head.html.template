@@ -1,0 +1,58 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="%VIRT_ROOT%/assets/fonts/fonts.min.css" rel="stylesheet" type="text/css">
+<link href="%VIRT_ROOT%/assets/css/gruvbox.css" rel="stylesheet" type="text/css">
+<link href="%VIRT_ROOT%/assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css">
+<script src="%VIRT_ROOT%/assets/js/jquery.min.js"></script>
+<script src="%VIRT_ROOT%/assets/js/jquery.mCustomScrollbar.min.js"></script>
+<link href="%VIRT_ROOT%/assets/css/cgit.css" rel="stylesheet" type="text/css">
+<script>
+function go_responsive() {
+    /* destroy tables that prevent responsive design */
+    var tabs = document.createElement("div");
+    var header_form = document.createElement("div");
+    var forms = document.createElement("div");
+    tabs.className = "tabs";
+    forms.className = "forms";
+    var header_td_form = $("table#header td.form");
+    header_td_form.children().appendTo(header_form);
+    header_td_form.remove();
+    var tab_items = $("table.tabs td").map(function(i, v) {
+        var div = document.createElement("div");
+        $(v).children().appendTo(div);
+        return div;
+    });
+    tab_items[1].className = "form";
+    header_form.className = "form";
+    $([tab_items[1], header_form]).appendTo(forms);
+    $(tab_items[0]).appendTo(tabs);
+    $("table.tabs").remove();
+    var header = $("table#header");
+    $(tabs).insertAfter(header);
+    $(forms).insertAfter(header);
+    header.css('display', 'inline-block');
+    header.css('width', 'auto');
+}
+
+function wrap_fat_elements() {
+    /* wrap the elements that could be very large in width */
+    $("table.list, table.blob, table.ssdiff, " +
+     "table.bin-blob, table.nowrap, table.commit-info, " +
+     "table.diffstat, table.diff, table.list, table.stats, " +
+     "table.vgraph, table.hgraph, table.blame" 
+     ).wrap("<div class='table-wrap'></div>");
+    $('.table-wrap, pre.literal-block').mCustomScrollbar({
+        axis: 'x',
+        theme: 'minimal',
+        autoHideScrollbar: true,
+        autoDraggerLength: true,
+        scrollInertia: 100,
+        mouseWheel: { enable: true, axis: 'x' },
+        documentTouchScroll: true
+    });
+}
+
+$(function() {
+    go_responsive();
+    wrap_fat_elements();
+});
+</script>

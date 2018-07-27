@@ -1,10 +1,6 @@
-@font-face{
-	font-family:'Fantasque Sans Mono';
-	src:url('../assets/fonts/FantasqueSansMono-Regular.eot');
-}
-
 body {
 	background: #282828;
+    margin: 0px;
 }
 
 .code code {
@@ -19,6 +15,20 @@ pre.literal-block {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+
+span.literal {
+    background-color: #3c3836;
+    padding: 0.1em 0.35em;
+    overflow: auto;
+    line-height: 1.3em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+div#cgit p {
+    font-size: 10pt;
 }
 
 pre.literal-block.code span {
@@ -70,7 +80,7 @@ div#cgit {
 	font-size: 10pt;
 	color: #ebdbb2;
 	background: #282828;
-	padding: 4px;
+	padding: 1em;
 }
 
 div#cgit a {
@@ -88,7 +98,7 @@ div#cgit table {
 }
 
 div#cgit table#header {
-	width: 100%;
+    width: 100%;
 	margin-bottom: 1em;
 }
 
@@ -125,31 +135,32 @@ div#cgit table#header td.sub {
 	padding-left: 10px;
 }
 
-div#cgit table.tabs {
+div#cgit .tabs {
+    clear: both;
 	border-bottom: solid 2px #d5c4a1;
 	border-collapse: collapse;
-	margin-top: 2em;
+	/* margin-top: 2em; */
 	margin-bottom: 0px;
 	width: 100%;
 }
 
-div#cgit table.tabs td {
+div#cgit table.tabs td, div.tabs div {
 	padding: 2px 1em;
 	vertical-align: bottom;
 }
 
-div#cgit table.tabs td a {
+div#cgit .tabs a {
 	padding: 3px 0.75em;
 	color: #d5c4a1;
 	font-size: 110%;
 }
 
-div#cgit table.tabs td a.active {
+div#cgit .tabs a.active {
 	color: #000;
 	background-color: #d5c4a1;
 }
 
-div#cgit table.tabs a[href^="http://"]:after, div#cgit table.tabs a[href^="https://"]:after {
+div#cgit .tabs a[href^="http://"]:after, div#cgit div.tabs a[href^="https://"]:after {
 	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfgAhcJDQY+gm2TAAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAABbSURBVAhbY2BABs4MU4CwhYHBh2Erww4wrGFQZHjI8B8IgUIscJWyDHcggltQhI4zGDCcRwhChPggHIggP1QoAVmQkSETrGoHsiAEsACtBYN0oDAMbgU6EBcAAL2eHUt4XUU4AAAAAElFTkSuQmCC);
 	opacity: 0.5;
 	margin: 0 0 0 5px;
@@ -165,8 +176,30 @@ div#cgit table.tabs td.form form {
 	white-space: nowrap;
 }
 
-div#cgit table.tabs td.form input,
-div#cgit table.tabs td.form select {
+
+div#cgit div.forms {
+    vertical-align: top;
+    margin-top: 1em;
+    display: inline-block;
+    float: right;
+}
+
+div#cgit .form {
+    text-align: right;
+}
+
+div#cgit .form form {
+	margin: 0.3em 0px;
+	font-size: 100%;
+	white-space: nowrap;
+}
+
+div#cgit .form input[type="submit"] {
+    min-width: 4em;
+}
+
+div#cgit .form input,
+div#cgit .form select {
 	font-size: 100%;
 }
 
@@ -184,6 +217,7 @@ div#cgit div.content {
 
 
 div#cgit table.list {
+    white-space: nowrap;
 	width: 100%;
 	border: none;
 	border-collapse: collapse;
@@ -381,6 +415,47 @@ div#cgit table.ssdiff td.lineno a {
 
 div#cgit table.blob td.linenumbers a:hover,
 div#cgit table.ssdiff td.lineno a:hover {
+}
+
+div#cgit table.blame td.hashes,
+div#cgit table.blame td.lines,
+div#cgit table.blame td.linenumbers {
+	padding: 0;
+}
+
+div#cgit table.blame td.hashes div.alt,
+div#cgit table.blame td.lines div.alt {
+	padding: 0 0.5em 0 0.5em;
+}
+
+div#cgit table.blame td.linenumbers div.alt {
+	padding: 0 0.5em 0 0;
+}
+
+div#cgit table.blame div.alt:nth-child(even) {
+	background: #2a2a2a;
+}
+
+div#cgit table.blame div.alt:nth-child(odd) {
+	background: #323232;
+}
+
+div#cgit table.blame td.lines > div {
+	position: relative;
+}
+
+div#cgit table.blame td.lines > div > pre {
+	padding: 0 0 0 0.5em;
+	position: absolute;
+	top: 0;
+}
+
+div#cgit table.blame .code {
+    background: none;
+}
+
+div#cgit table.blame .code span {
+    background: none;
 }
 
 div#cgit table.bin-blob {
@@ -876,47 +951,74 @@ div#cgit table.ssdiff td.space div {
 	min-height: 3em;
 }
 
-div#cgit table.blame td.hashes,
-div#cgit table.blame td.lines,
-div#cgit table.blame td.linenumbers {
-	padding: 0;
-}
-
-div#cgit table.blame td.hashes div.alt,
-div#cgit table.blame td.lines div.alt {
-	padding: 0 0.5em 0 0.5em;
-}
-
-div#cgit table.blame td.linenumbers div.alt {
-	padding: 0 0.5em 0 0;
-}
-
-div#cgit table.blame div.alt:nth-child(even) {
-	background: #2a2a2a;
-}
-
-div#cgit table.blame div.alt:nth-child(odd) {
-	background: #323232;
-}
-
-div#cgit table.blame td.lines > div {
-	position: relative;
-}
-
-div#cgit table.blame td.lines > div > pre {
-	padding: 0 0 0 0.5em;
-	position: absolute;
-	top: 0;
-}
-
-div#cgit table.blame .code {
-    background: none;
-}
-
-div#cgit table.blame .code span {
-    background: none;
-}
-
 div#cgit span.docutils.literal {
 	font-family: 'Fantasque Sans Mono', 'Inconsolata', monospace;
+}
+
+div#cgit {
+    min-width: 320px;
+}
+
+@media (max-width: 600px) {
+    div#cgit div.path {
+        padding: 5px;
+    }
+
+    div#cgit div.content {
+        padding: 1em 0;
+    }
+
+    div#cgit table#header {
+        display: block;
+    }
+
+    div#cgit div.forms {
+        margin-top: 0;
+        display: block;
+        float: none;
+    }
+
+    div#cgit div.tabs {
+        margin-top: 1em;
+    }
+
+    div#cgit div.tabs div {
+        padding: 0;
+        padding-bottom: 1em;
+    }
+
+    div#cgit div.tabs div a {
+        padding: 3px 1em;
+        margin: 0 -1em;
+        text-align: right;
+        display: block;
+    }
+
+    div#cgit div.cgit-panel {
+    	float: none;
+    }
+
+    div#cgit div.cgit-panel table {
+        display: inline-block;
+    }
+}
+
+.mCustomScrollbar,
+.mCustomScrollbar.mCS_touch_action,
+.mCustomScrollbar.mCS_touch_action .mCS-aviva.mCSB_scrollTools {
+        -ms-touch-action: auto;
+            touch-action: auto;
+}
+.mCustomScrollBox {
+        -ms-touch-action: pan-x pinch-zoom;
+            touch-action: pan-x pinch-zoom;
+}
+
+.mCustomScrollBox.mCSB_vertical_horizontal {
+        -ms-touch-action: pinch-zoom;
+            touch-action: pinch-zoom;
+}
+.mCustomScrollBox.mCSB_horizontal {
+        -ms-touch-action: pan-y pinch-zoom;
+            touch-action: pan-y pinch-zoom;
 }

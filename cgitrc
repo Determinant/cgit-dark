@@ -1,5 +1,5 @@
 include=/home/ymf/repo/cgit/theme.cgitrc
-cache-size=1000
+#cache-size=1000
 enable-blame=1
 robots=noindex, nofollow
 
@@ -11,7 +11,7 @@ repo.desc=My solutions to ninety-nine Haskell problems.
 repo.path=/home/ymf/repo/h99.git
 
 repo.url=nixie-clock
-repo.desc=A multi-functional nixie tube clock implemented in Rust.
+repo.desc=Multi-functional nixie tube clock implemented in Rust.
 repo.path=/home/ymf/repo/nixie-clock.git
 
 repo.url=ethy.py
@@ -31,7 +31,7 @@ repo.desc=No-std NES emulator library and minimal emulator written purely in Rus
 repo.path=/home/ymf/repo/runes.git
 
 repo.url=nerv
-repo.desc=A Lua-based toolkit for high-performance deep learning
+repo.desc=Lua-based toolkit for high-performance deep learning
 repo.path=/home/ymf/repo/nerv.git
 
 repo.url=nerv-speech
@@ -47,11 +47,11 @@ repo.desc=C Implemented Bare and Ingenuous Compiler
 repo.path=/home/ymf/repo/cibic.git
 
 repo.url=lab_monitor
-repo.desc=An easy-to-deploy and simple web interface to monitor whatever you want.
+repo.desc=Easy-to-deploy and simple web interface to monitor whatever you want.
 repo.path=/home/ymf/repo/lab_monitor.git
 
 repo.url=piztor
-repo.desc=A simple location sharing system
+repo.desc=Simple location sharing system
 repo.path=/home/ymf/repo/piztor.git
 
 repo.url=sonsi

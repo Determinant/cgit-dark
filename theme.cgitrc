@@ -1,7 +1,7 @@
 css=
 logo=
 virtual-root=/git
-header=/home/ymf/repo/cgit/header.html
+head-include=/home/ymf/repo/cgit/head.html
 footer=/home/ymf/repo/cgit/footer.html
 source-filter=/home/ymf/repo/cgit/syntax-highlighting.py
 about-filter=/home/ymf/repo/cgit/about-formatting.sh

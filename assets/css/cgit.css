@@ -701,6 +701,11 @@ div#cgit ul.pager li {
 	margin: 0.25em 0.5em;
 }
 
+
+div#cgit ul.pager > li:before {
+    content: none;
+}
+
 div#cgit ul.pager a {
 	color: #a89984;
 }

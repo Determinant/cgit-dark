@@ -55,6 +55,13 @@ ul > li {
         margin-left: -17px;
         padding-top: 0.5em; }
 
+div.content:after {
+    content: ".";
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
+}
 
 div#cgit select, div#cgit input {
     margin: 0;
